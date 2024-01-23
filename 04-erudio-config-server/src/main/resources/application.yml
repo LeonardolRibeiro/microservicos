@@ -3,7 +3,14 @@ server:
 spring:
   application:
     name: erudio-config-server
-  profiles:
-    active:
-      - native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/LeonardolRibeiro/microservicos
+#em caso de repositorio privado use          username: username
+#em caso de repositorio privado use          password: pass
+          default-label: main
+          search-paths:
+            - 'erudio-config-server/*'
 
